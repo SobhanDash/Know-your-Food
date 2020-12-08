@@ -1,2 +1,2 @@
 # Know-your-Food
-Created with CodeSandbox
+A react app that can identify different food and beverage emojis available.
