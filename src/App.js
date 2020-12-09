@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { fooddict } from "./emojidb";
 
 const meaningStyle = {
   fontSize: "2rem",
@@ -22,7 +23,7 @@ const inputstyle = {
   border: "none",
   borderRadius: "0.5rem",
   color: "white",
-  fontSize: "1.2rem"
+  fontSize: "1.5rem"
 };
 
 const choice = {
@@ -37,76 +38,11 @@ const cursor = {
   cursor: "pointer"
 };
 
-const fooddict = {
-  "🍔": "Hamburger",
-  "🍟": "French Fries",
-  "🍕": "Pizza",
-  "🌭": "Hot Dog",
-  "🥪": "Sandwich",
-  "🌮": "Taco",
-  "🌯": "Burrito",
-  "🥙": "Stuffed Flatbread",
-  "🧆": "Falafel",
-  "🍱": "Bento Box",
-  "🍘": "Rice Cracker",
-  "🍙": "Rice Ball",
-  "🍚": "Cooked Rice",
-  "🍛": "Curry Rice",
-  "🍜": "Steaming Bowl",
-  "🍝": "Spaghetti",
-  "🍠": "Roasted Sweet Potato",
-  "🍢": "Oden",
-  "🍣": "Sushi",
-  "🍤": "Fried Shrimp",
-  "🍥": "Fish Cake",
-  "🥮": "Moon Cake",
-  "🍡": "Dango",
-  "🥟": "Dumpling",
-  "🥠": "Fortune Cookie",
-  "🥡": "Takeout Box",
-  "🦪": "Oyster",
-  "🍇": "Grapes",
-  "🍈": "Melon",
-  "🍉": "Watermelon",
-  "🍊": "Tangerine",
-  "🍋": "Lemon",
-  "🍌": "Banana",
-  "🍍": "Pineapple",
-  "🥭": "Mango",
-  "🍎": "Red Apple",
-  "🍏": "Green Apple",
-  "🍐": "Pear",
-  "🍑": "Peach",
-  "🍒": "Cherries",
-  "🍓": "Strawberry",
-  "🥨": "Pretzel",
-  "🥯": "Bagel",
-  "🥞": "Pancakes",
-  "🧇": "Waffle",
-  "🧀": "Cheese Wedge",
-  "🍖": "Meat on Bone",
-  "🍗": "Chicken Leg Piece",
-  "🥩": "Cut of Meat",
-  "🥓": "Bacon",
-  "🍦": "Soft Ice Cream",
-  "🍧": "Shaved Ice",
-  "🍨": "Ice Cream",
-  "🍩": "Doughnut",
-  "🍪": "Cookie",
-  "🎂": "Birthday Cake",
-  "🍰": "Shortcake",
-  "🧁": "Cupcake",
-  "🥧": "Pie",
-  "🍫": "Chocolate Bar",
-  "🍬": "Candy",
-  "🍭": "Lollipop",
-  "🍮": "Custard"
-};
-
 var foodweknow = Object.keys(fooddict);
 
 export default function App() {
   const [meaning, setmeaning] = useState("");
+  //when item not selected index=-1
   const [emojiindex, setemojiindex] = useState(-1);
 
   function foodInputHandler(event) {
