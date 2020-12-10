@@ -74,13 +74,11 @@ export default function App() {
         type="text"
       />
 
-      {emojiindex === -1 ? (
-        <h2 style={meaningStyle}> Meaning: {meaning} </h2>
-      ) : (
-        <h2 style={meaningStyle}>
-          {choice} : {meaning}
-        </h2>
-      )}
+      {emojiindex === -1 ? 
+        (<h2 style={meaningStyle}> Meaning: {meaning} </h2>)
+       : 
+        (<h2 style={meaningStyle}> {choice} : {meaning} </h2>)
+      }
 
       <div style={choice}> Click on your choice! </div>
 
@@ -89,8 +87,8 @@ export default function App() {
           <span
             onClick={() => foodClickHandler(emoji)}
             style={cursor}
-            key={emoji}
-          >
+            key={emoji}>
+              
             {emoji}
           </span>
         );
