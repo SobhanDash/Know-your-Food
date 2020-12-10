@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import { fooddict } from "./emojidb";
 
+// styling
 const meaningStyle = {
   fontSize: "2rem",
   color: "blueviolet",
@@ -38,13 +39,16 @@ const cursor = {
   cursor: "pointer"
 };
 
+// accessing the keys from dictionary
 var foodweknow = Object.keys(fooddict);
 
 export default function App() {
+  // state of meaning is initially empty  
   const [meaning, setmeaning] = useState("");
   //when item not selected index=-1
   const [emojiindex, setemojiindex] = useState(-1);
 
+  // Input Handler
   function foodInputHandler(event) {
     var userInput = event.target.value;
 
@@ -57,6 +61,7 @@ export default function App() {
     setmeaning(meaning);
   }
 
+  // Click Handler
   function foodClickHandler(input) {
     var meaning = fooddict[input];
     setmeaning(meaning);
@@ -67,6 +72,7 @@ export default function App() {
       <h1>Know your Food!</h1>
       <h2> Select or Enter a food/drink emoji</h2>
 
+      {/* Input Holder */}
       <input
         onChange={foodInputHandler}
         placeholder="Enter your emoji"
@@ -74,6 +80,7 @@ export default function App() {
         type="text"
       />
 
+      {/* Output Holder */}
       {emojiindex === -1 ? 
         (<h2 style={meaningStyle}> Meaning: {meaning} </h2>)
        : 
@@ -82,8 +89,10 @@ export default function App() {
 
       <div style={choice}> Click on your choice! </div>
 
+      {/* displays all emojis */}
       {foodweknow.map(function (emoji) {
         return (
+          // Action on click
           <span
             onClick={() => foodClickHandler(emoji)}
             style={cursor}
