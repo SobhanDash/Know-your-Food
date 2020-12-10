@@ -1,5 +1,4 @@
 .App {
-  font-family: sans-serif;
   text-align: center;
   maxwidth: 700px;
   margin: auto;
@@ -9,6 +8,7 @@
 }
 
 body {
+  font-family: "Langar", cursive;
   background-color: #181818;
   color: white;
   display: flex;
