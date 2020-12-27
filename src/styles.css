@@ -1,6 +1,30 @@
 .App {
-  font-family: sans-serif;
   text-align: center;
+  maxwidth: 700px;
+  margin: auto;
+  backgroundcolor: #181818;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "Langar", cursive;
+  background-color: #181818;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+h1 {
+  font-size: 3rem;
+  color: dodgerblue;
+}
+
+h2 {
+  color: green;
 }
 
 h1 {
